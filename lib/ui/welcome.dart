@@ -7,8 +7,10 @@ import 'package:teacher_app/ui/practice.dart';
 import 'package:teacher_app/ui/practice2.dart';
 import 'package:teacher_app/ui/practice3.dart';
 import 'package:teacher_app/ui/qustions.dart';
+import 'package:teacher_app/ui/results.dart';
 import 'package:teacher_app/ui/search.dart';
 import 'package:teacher_app/ui/startTest.dart';
+import 'package:teacher_app/ui/test1.dart';
 
 class Welcome extends StatelessWidget {
   @override
@@ -21,7 +23,7 @@ class Welcome extends StatelessWidget {
           child: GestureDetector(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                return PracticeQuestionPaper();
+                return Results();
               }));
             },
             child: Text("Start"),
