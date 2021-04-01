@@ -7,6 +7,12 @@ class PracticeQuestionPaper extends StatefulWidget {
 }
 
 class _PracticeQuestionPaperState extends State<PracticeQuestionPaper> {
+  String _practices;
+  String _class;
+  String _subject;
+  String _language;
+  String _examType;
+
   void showDialog2() {
     showGeneralDialog(
       barrierLabel: "Barrier",
@@ -433,13 +439,44 @@ class _PracticeQuestionPaperState extends State<PracticeQuestionPaper> {
                                   bottom: 2,
                                   top: 2,
                                 ),
-                                child: Text(
-                                  "Practice Text",
-                                  style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.w400,
-                                      color: kBlackColor),
+                                child:DropdownButton<String>(
+                                  focusColor:Colors.white,
+                                  value: _practices,
+                                  //elevation: 5,
+                                  style: TextStyle(color: Colors.white),
+                                  iconEnabledColor:Colors.black,
+                                  items: <String>[
+                                    'Quiz',
+                                    'Text',
+                                    'Practice Test',
+                                    'MCQs',
+
+                                  ].map<DropdownMenuItem<String>>((String value) {
+                                    return DropdownMenuItem<String>(
+                                      value: value,
+                                      child: Text(value,style:TextStyle(color:Colors.black),),
+                                    );
+                                  }).toList(),
+                                  hint:Text(
+                                    "Practice Text",
+                                      style: TextStyle(
+                                          fontSize: 10,
+                                          fontWeight: FontWeight.w400,
+                                          color: kBlackColor),
+                                  ),
+                                  onChanged: (String value) {
+                                    setState(() {
+                                      _practices = value;
+                                    });
+                                  },
                                 ),
+                                // Text(
+                                //   "Practice Text",
+                                //   style: TextStyle(
+                                //       fontSize: 10,
+                                //       fontWeight: FontWeight.w400,
+                                //       color: kBlackColor),
+                                // ),
                               ),
                             ),
                           ),
@@ -678,12 +715,36 @@ class _PracticeQuestionPaperState extends State<PracticeQuestionPaper> {
                                       left: MediaQuery.of(context).size.width *
                                           0.03,
                                     ),
-                                    child: Text(
-                                      "10th",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          color: kBlackColor),
+                                    child: DropdownButton<String>(
+                                      focusColor:Colors.white,
+                                      value: _class,
+                                      //elevation: 5,
+                                      style: TextStyle(color: Colors.white),
+                                      iconEnabledColor:Colors.black,
+                                      items: <String>[
+                                        'Quiz',
+                                        'Text',
+                                        'Practice Test',
+                                        'MCQs',
+
+                                      ].map<DropdownMenuItem<String>>((String value) {
+                                        return DropdownMenuItem<String>(
+                                          value: value,
+                                          child: Text(value,style:TextStyle(color:Colors.black),),
+                                        );
+                                      }).toList(),
+                                      hint:Text(
+                                        "Practice Text",
+                                        style: TextStyle(
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.w400,
+                                            color: kBlackColor),
+                                      ),
+                                      onChanged: (String value) {
+                                        setState(() {
+                                          _class = value;
+                                        });
+                                      },
                                     ),
                                   ),
                                 ),
@@ -718,12 +779,36 @@ class _PracticeQuestionPaperState extends State<PracticeQuestionPaper> {
                                       left: MediaQuery.of(context).size.width *
                                           0.03,
                                     ),
-                                    child: Text(
-                                      "English",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          color: kBlackColor),
+                                    child: DropdownButton<String>(
+                                      focusColor:Colors.white,
+                                      value: _subject,
+                                      //elevation: 5,
+                                      style: TextStyle(color: Colors.white),
+                                      iconEnabledColor:Colors.black,
+                                      items: <String>[
+                                        'Quiz',
+                                        'Text',
+                                        'Practice Test',
+                                        'MCQs',
+
+                                      ].map<DropdownMenuItem<String>>((String value) {
+                                        return DropdownMenuItem<String>(
+                                          value: value,
+                                          child: Text(value,style:TextStyle(color:Colors.black),),
+                                        );
+                                      }).toList(),
+                                      hint:Text(
+                                        "Practice Text",
+                                        style: TextStyle(
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.w400,
+                                            color: kBlackColor),
+                                      ),
+                                      onChanged: (String value) {
+                                        setState(() {
+                                          _subject = value;
+                                        });
+                                      },
                                     ),
                                   ),
                                 ),
@@ -770,12 +855,36 @@ class _PracticeQuestionPaperState extends State<PracticeQuestionPaper> {
                                       left: MediaQuery.of(context).size.width *
                                           0.03,
                                     ),
-                                    child: Text(
-                                      "English",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          color: kBlackColor),
+                                    child: DropdownButton<String>(
+                                      focusColor:Colors.white,
+                                      value: _language,
+                                      //elevation: 5,
+                                      style: TextStyle(color: Colors.white),
+                                      iconEnabledColor:Colors.black,
+                                      items: <String>[
+                                        'Quiz',
+                                        'Text',
+                                        'Practice Test',
+                                        'MCQs',
+
+                                      ].map<DropdownMenuItem<String>>((String value) {
+                                        return DropdownMenuItem<String>(
+                                          value: value,
+                                          child: Text(value,style:TextStyle(color:Colors.black),),
+                                        );
+                                      }).toList(),
+                                      hint:Text(
+                                        "Practice Text",
+                                        style: TextStyle(
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.w400,
+                                            color: kBlackColor),
+                                      ),
+                                      onChanged: (String value) {
+                                        setState(() {
+                                          _language = value;
+                                        });
+                                      },
                                     ),
                                   ),
                                 ),
@@ -810,12 +919,36 @@ class _PracticeQuestionPaperState extends State<PracticeQuestionPaper> {
                                       left: MediaQuery.of(context).size.width *
                                           0.03,
                                     ),
-                                    child: Text(
-                                      "English",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          fontWeight: FontWeight.w400,
-                                          color: kBlackColor),
+                                    child: DropdownButton<String>(
+                                      focusColor:Colors.white,
+                                      value: _examType,
+                                      //elevation: 5,
+                                      style: TextStyle(color: Colors.white),
+                                      iconEnabledColor:Colors.black,
+                                      items: <String>[
+                                        'Quiz',
+                                        'Text',
+                                        'Practice Test',
+                                        'MCQs',
+
+                                      ].map<DropdownMenuItem<String>>((String value) {
+                                        return DropdownMenuItem<String>(
+                                          value: value,
+                                          child: Text(value,style:TextStyle(color:Colors.black),),
+                                        );
+                                      }).toList(),
+                                      hint:Text(
+                                        "Practice Text",
+                                        style: TextStyle(
+                                            fontSize: 10,
+                                            fontWeight: FontWeight.w400,
+                                            color: kBlackColor),
+                                      ),
+                                      onChanged: (String value) {
+                                        setState(() {
+                                          _examType = value;
+                                        });
+                                      },
                                     ),
                                   ),
                                 ),

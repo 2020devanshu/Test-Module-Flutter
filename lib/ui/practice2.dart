@@ -2,7 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:teacher_app/ui/constants.dart';
 
 
-class SelectQuestionPaper extends StatelessWidget {
+class SelectQuestionPaper extends StatefulWidget {
+  @override
+  _SelectQuestionPaperState createState() => _SelectQuestionPaperState();
+}
+
+class _SelectQuestionPaperState extends State<SelectQuestionPaper> {
+  bool ques1 = false;
+  String filter;
+  Widget checkbox(bool boolValue) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Checkbox(value: ques1,
+            activeColor: kPrimaryColor,
+            onChanged:(bool newValue){
+              setState(() {
+                ques1 = newValue;
+              });
+              Text('Remember me');
+            }),
+      ],
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -157,31 +179,56 @@ class SelectQuestionPaper extends StatelessWidget {
                               color: kBlackColor),
                         ),
                         SizedBox(
-                          width: MediaQuery.of(context).size.width*0.3,
+                          width: MediaQuery.of(context).size.width*0.2,
                         ),
                         Container(
-                          width: 80,
+                          width: MediaQuery.of(context).size.width * 0.35,
                           height: 20,
                           decoration: BoxDecoration(
                               border:
                               Border.all(color: kGreyColor, width: 0.5),
                               borderRadius: BorderRadius.circular(5),
                           color: kWhiteColor),
-                          child: Center(
-                            child: Padding(
-                              padding: EdgeInsets.only(
-                                // left: 12,
-                                // right: 4,
-                                bottom: 2,
-                                top: 2,
-                              ),
-                              child: Text(
-                                "filter",
+                          child: Padding(
+                            padding: EdgeInsets.only(
+                              left: 10,
+                              // right: 4,
+                              bottom: 2,
+                              top: 2,
+                            ),
+                            child: DropdownButton<String>(
+
+                              focusColor:Colors.white,
+                              value: filter,
+                              //elevation: 5,
+                              style: TextStyle(color: Colors.white),
+                              iconEnabledColor:Colors.black,
+                              items: <String>[
+                                'Quiz',
+                                'Text',
+                                'Practice Test',
+                                'MCQs',
+                                'Fill in the blanks',
+                                'objective',
+
+                              ].map<DropdownMenuItem<String>>((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value,style:TextStyle(color:Colors.black),),
+                                );
+                              }).toList(),
+                              hint:Text(
+                                "Filter",
                                 style: TextStyle(
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400,
                                     color: kBlackColor),
                               ),
+                              onChanged: (String value) {
+                                setState(() {
+                                  filter = value;
+                                });
+                              },
                             ),
                           ),
                         ),
@@ -204,12 +251,14 @@ class SelectQuestionPaper extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          CircleAvatar(
-                            radius: 9,
-                            backgroundColor: Colors.yellow,
-                          ),
+                          checkbox(ques1),
+
+                          // CircleAvatar(
+                          //   radius: 9,
+                          //   backgroundColor: Colors.yellow,
+                          // ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width*0.08,
+                            width: MediaQuery.of(context).size.width*0.0,
                           ),
                           Container(
                             width: MediaQuery.of(context).size.width*0.65,

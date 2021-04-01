@@ -8,7 +8,14 @@ class SelectQuestionPaper3 extends StatefulWidget {
 }
 
 class _SelectQuestionPaper3State extends State<SelectQuestionPaper3> {
+  int radioValue = 0;
+  double _finalResult = 0.0;
 
+  void handleRadioValueChanged(int value){
+    setState(() {
+      radioValue = value;
+    });
+  }
   void showDialog1() {
     showGeneralDialog(
       barrierLabel: "Barrier",
@@ -123,7 +130,7 @@ class _SelectQuestionPaper3State extends State<SelectQuestionPaper3> {
                 top: 80,
               ),
               width: MediaQuery.of(context).size.width,
-              height: 250,
+              height: 350,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
@@ -134,19 +141,56 @@ class _SelectQuestionPaper3State extends State<SelectQuestionPaper3> {
                   right: MediaQuery.of(context).size.width * 0.05,
                 ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     SizedBox(
-                      height: 25,
+                      height: 10,
                     ),
                     Text(
-                      "Section Details & Instruction\n\n\n",
+                      "Section Details & Instruction",
                       style: TextStyle(
                           fontSize: 14,                              decoration: TextDecoration.none,
 
                           fontWeight: FontWeight.w400,
                           color: kBlackColor),
-                    ), Text(
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Title",
+                      style: TextStyle(
+                          fontSize: 14,                              decoration: TextDecoration.none,
+
+                          fontWeight: FontWeight.w400,
+                          color: kBlackColor),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Part A",
+                      style: TextStyle(
+                          fontSize: 14,                              decoration: TextDecoration.none,
+
+                          fontWeight: FontWeight.w400,
+                          color: kBlackColor),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),Text(
+                      "Instructions",
+                      style: TextStyle(
+                          fontSize: 14,                              decoration: TextDecoration.none,
+
+                          fontWeight: FontWeight.w400,
+                          color: kBlackColor),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
                       "Lorem ipsum dolor sit amet, "
                           "consectetur adipiscing elit. Ut blandit eleifend eget "
                           "massa semper. Arcu massa viverra fermentum feu",
@@ -157,7 +201,7 @@ class _SelectQuestionPaper3State extends State<SelectQuestionPaper3> {
                           color: kBlackColor),
                     ),
                     SizedBox(
-                      height: 25,
+                      height: 20,
                     ),
                     Container(
                       width: MediaQuery.of(context).size.width * 0.8,
@@ -176,6 +220,9 @@ class _SelectQuestionPaper3State extends State<SelectQuestionPaper3> {
                           ),
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 20,
                     ),
 
 
@@ -443,7 +490,6 @@ class _SelectQuestionPaper3State extends State<SelectQuestionPaper3> {
                           right: MediaQuery.of(context).size.width * 0.05,
                         ),
                         child: Container(
-                            height: 120,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -470,13 +516,9 @@ class _SelectQuestionPaper3State extends State<SelectQuestionPaper3> {
                                           color: kBlackColor),),
                                       Row(
                                         children: [
-                                          CircleAvatar(
-                                            radius: 5,
-                                            backgroundColor: Colors.blue[200],
-                                          ),
-                                          SizedBox(
-                                            width: 10,
-                                          ),
+                                          new Radio<int>(value: 1, groupValue: radioValue, onChanged: handleRadioValueChanged,
+                                            activeColor: Colors.blue,),
+
                                           Text("A Lever", style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w600,
@@ -486,12 +528,8 @@ class _SelectQuestionPaper3State extends State<SelectQuestionPaper3> {
 
                                       Row(
                                         children: [
-                                          CircleAvatar(
-                                            radius: 5,
-                                            backgroundColor: Colors.blue[200],
-                                          ),SizedBox(
-                                            width: 10,
-                                          ),
+                                        Radio<int>(value: 2, groupValue: radioValue, onChanged: handleRadioValueChanged,
+                                        activeColor: Colors.blue,),
                                           Text("The turning effect of a force ", style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w600,
@@ -500,12 +538,9 @@ class _SelectQuestionPaper3State extends State<SelectQuestionPaper3> {
                                       ),
                                       Row(
                                         children: [
-                                          CircleAvatar(
-                                            radius: 5,
-                                            backgroundColor: Colors.blue[200],
-                                          ),SizedBox(
-                                            width: 10,
-                                          ),
+                                        Radio<int>(value: 3, groupValue: radioValue, onChanged: handleRadioValueChanged,
+                                        activeColor: Colors.blue,)
+                                          ,
                                           Text("multimeter", style: TextStyle(
                                               fontSize: 14,
                                               fontWeight: FontWeight.w600,

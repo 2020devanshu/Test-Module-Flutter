@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:teacher_app/ui/constants.dart';
 
-class StartTest extends StatelessWidget {
+class Assignment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -63,23 +63,23 @@ class StartTest extends StatelessWidget {
                     left: MediaQuery.of(context).size.width * 0.05,
                     right: MediaQuery.of(context).size.width * 0.05,
                   ),                  child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Center(
-                      child: Text(
-                        "Assign",
-                        style: TextStyle(
-                          fontSize: 14,
-                          decoration: TextDecoration.none,
-                          fontWeight: FontWeight.w500,
-                          color: kBlackColor,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Center(
+                        child: Text(
+                          "Assign",
+                          style: TextStyle(
+                            fontSize: 14,
+                            decoration: TextDecoration.none,
+                            fontWeight: FontWeight.w500,
+                            color: kBlackColor,
+                          ),
                         ),
                       ),
-                    ),
-                    Icon(Icons.arrow_forward_ios,
+                      Icon(Icons.arrow_forward_ios,
                       color: kBlackColor,)
-                  ],
-                ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
@@ -110,87 +110,87 @@ class StartTest extends StatelessWidget {
                     right: MediaQuery.of(context).size.width * 0.05,
                   ),                              child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: Colors.grey,
-                    ),
-                    Text(
-                      "Total:",
-                      style: TextStyle(
-                        fontSize: 14,
-                        decoration: TextDecoration.none,
-                        fontWeight: FontWeight.w400,
-                        color: kBlackColor,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.grey,
                       ),
-                    ),
-                    Text(
-                      "10 Questions",
-                      style: TextStyle(
-                        fontSize: 14,
-                        decoration: TextDecoration.none,
-                        fontWeight: FontWeight.w600,
-                        color: kBlackColor,
+                      Text(
+                        "Total:",
+                        style: TextStyle(
+                          fontSize: 14,
+                          decoration: TextDecoration.none,
+                          fontWeight: FontWeight.w400,
+                          color: kBlackColor,
+                        ),
                       ),
-                    ),
-                    Container(
-                      height: 100,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.wine_bar,
-                            color: kPrimaryColor,
-                            size: 30,
-                          ),
-                          Container(
-                            child: Center(
-                              child: Text(
-                                "20",
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: kBlackColor),
+                      Text(
+                        "10 Questions",
+                        style: TextStyle(
+                          fontSize: 14,
+                          decoration: TextDecoration.none,
+                          fontWeight: FontWeight.w600,
+                          color: kBlackColor,
+                        ),
+                      ),
+                      Container(
+                        height: 100,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.wine_bar,
+                              color: kPrimaryColor,
+                              size: 30,
+                            ),
+                            Container(
+                              child: Center(
+                                child: Text(
+                                  "20",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color: kBlackColor),
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                    Container(
-                      height: 80,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.label_important,
-                            color: kPrimaryColor,
-                            size: 30,
-                          ),
-                          Container(
-                            child: Center(
-                              child: Text(
-                                "20",
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: kBlackColor),
+                      Container(
+                        height: 80,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.label_important,
+                              color: kPrimaryColor,
+                              size: 30,
+                            ),
+                            Container(
+                              child: Center(
+                                child: Text(
+                                  "20",
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      fontWeight: FontWeight.w600,
+                                      color: kBlackColor),
+                                ),
                               ),
                             ),
-                          ),
 
-                        ],
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  ),
                 ),
               ),
               Expanded(child: ListView.builder(itemBuilder: (BuildContext context , int index){
                 return Padding(
                   padding: EdgeInsets.only(
-                      left: MediaQuery.of(context).size.width * 0.1,
-                      right: MediaQuery.of(context).size.width * 0.05,
-                      bottom: 5
+                    left: MediaQuery.of(context).size.width * 0.1,
+                    right: MediaQuery.of(context).size.width * 0.05,
+                    bottom: 5
                   ),
                   child: Container(
                     child: Row(
@@ -268,7 +268,7 @@ class StartTest extends StatelessWidget {
                                         color: kGreyColor),
                                   ),
                                   Icon(Icons.star,
-                                    color: kPrimaryColor,)
+                                  color: kPrimaryColor,)
                                 ],
                               )
                             ],

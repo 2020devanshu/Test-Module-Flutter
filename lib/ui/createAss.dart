@@ -58,11 +58,7 @@ class CreateAssignment extends StatelessWidget {
                           ),
                         ),
                       ),
-                      CircleAvatar(
-                        backgroundColor: kLightColor,
-                        child: Icon(Icons.add,
-                        color: kPrimaryColor,),
-                      )
+
                     ],
                   ),
                   SizedBox(
@@ -106,7 +102,46 @@ class CreateAssignment extends StatelessWidget {
                         ),
                       ),
                     );
-                  }))
+                  })),
+                  Padding(
+                    padding: EdgeInsets.only(
+                      bottom: 15,
+
+                    ),                      child: Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            CircleAvatar(
+                              backgroundColor: Colors.yellow[100],
+                              radius: 25,
+                              child: Icon(Icons.add,
+                                  color: kBlackColor),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Text(
+                              "Create a new Group",
+                              style: TextStyle(
+                                fontSize: 14,
+                                decoration: TextDecoration.none,
+                                fontWeight: FontWeight.w600,
+                                color: kBlackColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Icon(Icons.arrow_forward,
+                          color: kBlackColor,)
+                      ],
+                    ),
+                  ),
+                  ),
+                  SizedBox(
+                    height: 60,
+                  )
 
                 ],
               ),
