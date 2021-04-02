@@ -3,6 +3,8 @@ import 'package:teacher_app/ui/assignment.dart';
 import 'package:teacher_app/ui/createAss.dart';
 import 'package:teacher_app/ui/createAss2.dart';
 import 'package:teacher_app/ui/createAss3.dart';
+import 'package:teacher_app/ui/mcqs.dart';
+import 'package:teacher_app/ui/objective.dart';
 import 'package:teacher_app/ui/practice.dart';
 import 'package:teacher_app/ui/practice2.dart';
 import 'package:teacher_app/ui/practice3.dart';
@@ -23,7 +25,7 @@ class Welcome extends StatelessWidget {
           child: GestureDetector(
             onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (BuildContext context){
-                return Results();
+                return Mcqs();
               }));
             },
             child: Text("Start"),
